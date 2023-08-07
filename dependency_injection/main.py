@@ -16,6 +16,10 @@ from actions import Action
 from factories import action_factory
 
 
+def action_user(action: Action):
+    action.use_actions()
+
+
 def main() -> None:
     random_number1 = random.randint(-10, 10)
     random_number2 = random.randint(1, 10)
@@ -24,7 +28,7 @@ def main() -> None:
     action = action_factory(
         random_number1=random_number1, random_number2=random_number2
     )
-    action.use_actions()
+    action1_result = action_user(action=action)
 
 
 if __name__ == "__main__":
