@@ -16,19 +16,15 @@ from actions import Action
 from factories import action_factory
 
 
-def use_action(action: Action) -> None:
-    action.action1()
-    action.action2()
-
-
 def main() -> None:
     random_number1 = random.randint(-10, 10)
     random_number2 = random.randint(1, 10)
     print(f"numbers: {random_number1}, {random_number2}")
+
     action = action_factory(
         random_number1=random_number1, random_number2=random_number2
     )
-    use_action(action=action)
+    action.use_actions()
 
 
 if __name__ == "__main__":
