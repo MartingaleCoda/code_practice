@@ -3,7 +3,6 @@ import abc
 
 
 class FormalActionInterface(metaclass=abc.ABCMeta):
-    # This makes it so that if you have a class implementing the interface, they will rightfully be a subclass of the interface, but the interface won't show up in the method resolution order.
     @classmethod
     def __subclasshook__(cls, subclass):
         return all(
