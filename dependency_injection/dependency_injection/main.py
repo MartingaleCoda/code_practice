@@ -13,12 +13,12 @@ GENERAL NOTES:
 """
 import random
 
-from dependency_injection.actions import Action
-from dependency_injection.factories import action_factory
+from dependency_injection.actors import Actor
+from dependency_injection.factories import actor_factory
 
 
-def action_user(action: Action):
-    action.use_actions()
+def action_user(actor: Actor):
+    actor.use_actions()
 
 
 def run() -> None:
@@ -28,10 +28,8 @@ def run() -> None:
     random_number2 = random.randint(1, 10)
     print(f"numbers: {random_number1}, {random_number2}")
 
-    action = action_factory(
-        random_number1=random_number1, random_number2=random_number2
-    )
-    action_user(action=action)
+    actor = actor_factory(random_number1=random_number1, random_number2=random_number2)
+    action_user(actor=actor)
 
     print("Done!")
 

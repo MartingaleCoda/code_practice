@@ -2,7 +2,7 @@
 import abc
 
 
-class FormalActionInterface(metaclass=abc.ABCMeta):
+class FormalActorInterface(metaclass=abc.ABCMeta):
     @classmethod
     def __subclasshook__(cls, subclass):
         return all(

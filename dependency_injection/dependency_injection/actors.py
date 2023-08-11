@@ -1,16 +1,16 @@
-"""Actions."""
+"""Actors."""
 import random
 from typing import Type, TypeVar
 
-from dependency_injection.interfaces import FormalActionInterface
+from dependency_injection.interfaces import FormalActorInterface
 
-Action = TypeVar("Action", bound=FormalActionInterface)
+Actor = TypeVar("Actor", bound=FormalActorInterface)
 
 EXTRA_PHRASE = "I'm extra"
 RANDOM_RANGE = (1, 5)
 
 
-class PhrasesActor(FormalActionInterface):
+class PhrasesActor(FormalActorInterface):
     """Can print a phrase with some extra text and a number."""
 
     def __init__(self, phrase: str, number: int):
@@ -35,7 +35,7 @@ class PhrasesActor(FormalActionInterface):
         print(f"number: {self.number}")
 
 
-class MathActor(FormalActionInterface):
+class MathActor(FormalActorInterface):
     """Can print a sum or a product with some interference."""
 
     def __init__(self, num1: int, num2: int):
